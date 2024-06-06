@@ -3,7 +3,7 @@ import type {RouteRecordRaw} from "vue-router"
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home',
+    redirect: '/RealEstate',
   },
   {
     path: '/home',
@@ -20,6 +20,19 @@ const routes: Array<RouteRecordRaw> = [
         path: 'table',
         name: 'table',
         component: () => import('@/views/table/index.vue'),
+      }
+    ]
+  },
+  {
+    path: '/RealEstate',
+    name: 'RealEstate',
+    redirect: '/RealEstate/RealEstateIndex',
+    component: () => import('@/layout/RealEstate/index.vue'),
+    children:[
+      {
+        path: 'RealEstateIndex',
+        name: 'RealEstateIndex',
+        component: () => import('@/views/RealEstateIndex/index.vue'),
       }
     ]
   },
